@@ -28,7 +28,7 @@ public class KafkaProducer extends Thread {
          * request.required.acks = 1 - means the leader will write the message to its local log and immediately acknowledge
          * request.required.acks = -1 - means the leader will wait for acknowledgement from all in-sync replicas before acknowledging the write
          */
-        properties.put("request.required.acks", 1);
+        properties.put("request.required.acks", "1");
 
         producer = new Producer<Integer, String>(new ProducerConfig(properties));
     }
