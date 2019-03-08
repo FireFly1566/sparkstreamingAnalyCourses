@@ -14,7 +14,7 @@ public class KafkaProperties {
 
     public static final String BROKER_LIST = "node1:9093,node1:9094,node1:9095";
 
-
+    public static final String GROUP_ID = "test_group1";
 
 
 }
