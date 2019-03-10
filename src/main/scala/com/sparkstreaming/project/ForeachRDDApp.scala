@@ -45,7 +45,6 @@ object ForeachRDDApp {
       })
     })
 
-
     ssc.start()
     ssc.awaitTermination()
 
