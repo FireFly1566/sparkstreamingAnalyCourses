@@ -17,7 +17,7 @@ object FlumePushWordCount {
     val sparkConf = new SparkConf().setMaster("local[2]").setAppName("FlumePushWordCount")
     val ssc = new StreamingContext(sparkConf, Seconds(5))
 
-    val flumeStream = FlumeUtils.createPollingStream(ssc, hostname, port.toInt)
+    val flumeStream = FlumeUtils.createStream(ssc, hostname, port.toInt)
 
     flumeStream.map(x => new String(x.event.getBody.array()).trim)
       .flatMap(_.split(" ")).map((_, 1)).reduceByKey(_ + _)
